@@ -1,0 +1,11 @@
+fastapi==0.92.0
+uvicorn==0.20.0
+requests==2.28.1
+pytz==2022.2.1
+pydantic==1.10.5
+pymssql==2.2.7
+pandas==1.5.3
+pika==1.0.0
+pymongo==4.0.2
+#asyncio>=3.4.3
+#python-multipart

@@ -1,0 +1,4 @@
+DB_SERVER = 'AJSTAGINGILOG'
+DB_NAME = "Staging_Tejas"
+DB_USER = 'Puser'
+DB_PASSWORD = 'Puser2021'
