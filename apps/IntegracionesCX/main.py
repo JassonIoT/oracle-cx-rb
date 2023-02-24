@@ -10,7 +10,6 @@ import threading
 
 
 
-
 def operacionUno(container):
     try:
         print('========================================================')
@@ -48,6 +47,44 @@ def conectionTest(namedb):
     t.start()
     return 'Peticion Ok'
 """
+@router.post('/url_numero_uno')
+def postOperacionUno(container: Containers):
+    operacionUno(container)
+    return {"message": "Ok"}
+
+@router.get('/url_numero_dos')
+def getOperacionDos():
+    operacionDos()
+
+@router.get("/hello")
+def root():
+    return {"message": 'hola'}
+
+@router.get("/testdb")
+def testdb():
+    ver = testdb_db()
+    return {"message": ver}
+
+
+@router.post("/base")
+def base(namedb:NameDatabase):
+    #conectionTest(namedb)
+    print('entro al base')
+    return "Coneccion Ok"
+
+
+
+class Containers(BaseModel):
+    carrier_id: str
+    container_id: str
+
+
+class Container(BaseModel):
+    container_id: str
+
+
+class NameDatabase(BaseModel):
+    name_db: str
 @app.post("/upload_img")
 def image_filter(img: UploadFile = File(...)):
     original_image = Image.open(img.file)

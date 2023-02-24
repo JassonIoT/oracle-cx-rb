@@ -1,6 +1,5 @@
 from pydantic import BaseModel
 
-
 class ServiceClient(BaseModel):
     PartyNumber: str
     Nombre: str
@@ -27,16 +26,3 @@ class ServiceContact(BaseModel):
     Correo: str
     Responsable: str
     EstadoContacto: str
-
-
-class Containers(BaseModel):
-    carrier_id: str
-    container_id: str
-
-
-class Container(BaseModel):
-    container_id: str
-
-
-class NameDatabase(BaseModel):
-    name_db: str
